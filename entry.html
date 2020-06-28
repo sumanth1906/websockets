@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>from thirty</title>
+        <script type="text/javascript">
+        //sumanthkumar.sunnam@gmail.com
+        function validate()
+        {
+            var un=document.getElementById("i1").value;
+            var pass=document.getElementById("i2").value;
+            var RE=/^([a-zA-z0-9]+).([a-zA-z0-9]+)@([a-z]{5}).([a-z]{3})/;
+            var fp=/^([0-9a-zA-z]+)$/;
+            if(RE.test(un)&& fp.test(pass))
+            {
+                alert(un);
+                document.getElementById("l2").innerHTML="valid";
+                document.getElementById("l2").style.color="green";
+                document.getElementById("l2").style.visibility="visible";
+                return true;
+            }
+            else{
+                alert("invalid");
+                document.getElementById("l1").innerHTML="username or password is in corrrect";
+                document.getElementById("l1").style.color="red";
+                document.getElementById("l1").style.visibility="visible";
+                return false;
+            }
+
+        }
+        </script>
+    </head>
+    <body>
+        <div class="text-center"id="d1">
+            <form onsubmit="return validate()" action="object.html">
+                <input id="i1" placeholder="username">
+                <label id="l1" style="color: darkblue;visibility: hidden;">invalid</label>
+                <label id="l2" style="color: darkblue;visibility: hidden;">valid</label>
+                <br>
+                <input id="i2" type="password" placeholder="password">
+                <br> 
+                <br>
+            <a href="localhost:3000" class="btn-btn-secondary" role="button" aria-pressed="true">Submit</a>
+              </form>
+        </div>
+        
+    </body>
+</html>
